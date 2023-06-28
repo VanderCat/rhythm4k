@@ -18,6 +18,20 @@ MainMenuPage
     top: 128px;
     z-index: 100;
 }
+$scale: 0.875px;
+.logo-fix43 {
+    .logo {
+        font-size: 224px;
+        text-stroke: 21px #D10000;
+        filter: drop-shadow(0px 7px 0.1px #660000);
+    }
+    .author {
+        text-shadow: 3.5px 3.5px #411414;
+        font-size: 42px;
+        left: 504px;
+        top: 231.875px;
+    }
+}
 
 .logo {
     font-size: 256px;

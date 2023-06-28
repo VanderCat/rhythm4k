@@ -7,7 +7,7 @@
 @namespace Rhythm4K
 
 <root>
-	<div class="logo-container">
+	<div @ref="logoContainer" class="logo-container logo-fix43">
     	<!--<img class="logo" src="/sprites/logo.png"/>-->
     	<div class="logo">Rhythm4k</div> <!--im not sure if you like this new logo, so you can restore old one -->
     	<div class="author">by Carson Kompon</div>
@@ -36,7 +36,16 @@
 
 @code
 {
-    public async void Singleplayer()
+	private Panel logoContainer { get; set; }
+	private bool is43() => Screen.Aspect < 1.333;
+
+	protected override void OnAfterTreeRender( bool firstTime )
+	{
+		base.OnAfterTreeRender( firstTime );
+		logoContainer.BindClass("logo-fix43", is43);
+	}
+
+	public async void Singleplayer()
     {
         await Game.Menu.StartServerAsync(1, "My Server", "<empty>");
     }
