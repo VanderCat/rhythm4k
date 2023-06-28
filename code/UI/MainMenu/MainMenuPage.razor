@@ -7,25 +7,31 @@
 @namespace Rhythm4K
 
 <root>
-    <div class="logo-container">
-        <img class="logo" src="/sprites/logo.png" />
-        <div class="author">By Carson Kompon</div>
+	<div class="logo-container">
+    	<!--<img class="logo" src="/sprites/logo.png"/>-->
+    	<div class="logo">Rhythm4k</div> <!--im not sure if you like this new logo, so you can restore old one -->
+    	<div class="author">by Carson Kompon</div>
     </div>
-
-    <div class="menu">
-        @* <button onclick=@CreateLobby>Create Lobby</button>
-        <button onclick=@FindLobby>Find Lobby</button> *@
-        @if(Game.InGame)
-        {
-            <button onclick=@(() => Game.Menu.HideMenu() ) >Resume</button>
-        }
-        else
-        {
-            <button onclick=@Singleplayer>Play</button>
-        }
-        <button onclick=@GotoOptions>Options</button>
-        <button onclick=@(() => Game.Menu.Close()) >Quit</button>
-    </div>
+	<div class="menu-bar">
+		<div class="menupad"><!--pad--></div>
+		<div class="menu-list">
+			<div class="menu-list-upsection">
+				@* <button onclick=@CreateLobby>Create Lobby</button>
+		        <button onclick=@FindLobby>Find Lobby</button> *@
+				@if ( Game.InGame )
+				{
+					<button onclick=@(() => Game.Menu.HideMenu() )>Resume</button>
+					<button onclick=@Singleplayer>Song Select</button>
+				}
+				else
+				{
+					<button onclick=@Singleplayer>Play</button>
+				}
+				<button onclick=@GotoOptions>Options</button>
+			</div>
+			<button onclick=@(() => Game.Menu.Close())>Quit</button>
+		</div>
+	</div>
 </root>
 
 @code
